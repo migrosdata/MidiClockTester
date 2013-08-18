@@ -41,18 +41,20 @@ void myReadProc(const MIDIPacketList *packetList, void* readProcRefCon,
     int i;
     int count = packetList->numPackets;
     for (i=0; i<count; i++) {
-        printPacketInfo(packet);
+        //printPacketInfo(packet);
         [myDocument storeTimeStamp:packet->timeStamp];
         packet = MIDIPacketNext(packet);
     }
     
-    [myDocument.mctAppDelegate updateAverage:[NSString stringWithFormat:@"%lf", myDocument->avg]];
-    double tempo = (1000 / myDocument->avg / 24) * 60;
-    [myDocument.mctAppDelegate updateTempo:[NSString stringWithFormat:@"%lf", tempo]];
-    [myDocument.mctAppDelegate updateMin:myDocument->minTime andMax:myDocument->maxTime];
+	@autoreleasepool {
+    	[myDocument.mctAppDelegate updateAverage:[NSString stringWithFormat:@"%lf", myDocument->avg]];
+	    double tempo = (1000 / myDocument->avg / 24) * 60;
+	    [myDocument.mctAppDelegate updateTempo:[NSString stringWithFormat:@"%lf", tempo]];
+	    [myDocument.mctAppDelegate updateMin:myDocument->minTime andMax:myDocument->maxTime];
     
-    //double deviation = sqrt(pow(myDocument->sum - myDocument->avg, 2) / (myDocument->nbr -1));
-    //[myDocument.mctAppDelegate updateDeviation:[NSString stringWithFormat:@"%lf", deviation]];
+	    //double deviation = sqrt(pow(myDocument->sum - myDocument->avg, 2) / (myDocument->nbr -1));
+	    //[myDocument.mctAppDelegate updateDeviation:[NSString stringWithFormat:@"%lf", deviation]];
+	}
 }
 
 -(void) storeTimeStamp:(uint64_t) time{
