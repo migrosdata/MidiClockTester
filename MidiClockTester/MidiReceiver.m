@@ -19,11 +19,14 @@
 		MIDIClientCreate(CFSTR("MCT Client"), NULL, NULL, &client );
 		self.client = client;
 		
+        self->maxTime = 0;
+        self->minTime = DBL_MAX;
+		self->prev = 0;
+		self->nbr = 0;
+
 		MIDIPortRef inPort;
 		MIDIInputPortCreate(client, CFSTR("Input"), myReadProc, (__bridge_retained void *)(self), &inPort);
 		self.inPort = inPort;
-        self->maxTime = 0;
-        self->minTime = DBL_MAX;
 	}
 	
 	return self;
@@ -42,7 +45,15 @@ void myReadProc(const MIDIPacketList *packetList, void* readProcRefCon,
     int count = packetList->numPackets;
     for (i=0; i<count; i++) {
         //printPacketInfo(packet);
-        [myDocument storeTimeStamp:packet->timeStamp];
+		
+		for( int j = 0; j < packet->length; j++ )
+		{
+			if( packet->data[ j ] == 0xf8 )
+			{
+		        [myDocument storeTimeStamp:packet->timeStamp];
+			}
+		}
+		
         packet = MIDIPacketNext(packet);
     }
     
@@ -58,23 +69,55 @@ void myReadProc(const MIDIPacketList *packetList, void* readProcRefCon,
 }
 
 -(void) storeTimeStamp:(uint64_t) time{
-    double timeInSec = convertTimeInMilliseconds(time);
+    //double timeInSec = convertTimeInMilliseconds(time);
     if (self->prev == 0){
-        self->prev = timeInSec;
-    }
-    else {
-        double interval = timeInSec - self->prev;
-        self->sum += interval;
+        self->prev = time;
+        self->nbr = 0;
+        self->avg = 0;
+    } else {
+        uint64_t interval = time - self->prev;
+        self->prev = time;
+		//double intervalInSec = convertTimeInMilliseconds( interval );
+		//NSLog( @"%lld", interval );
+        //self->sum += interval;
+
         self->nbr++;
-        self->avg = sum / nbr;
-        self->prev = timeInSec;
+		self->intervals[ self->nbr ] = interval;
+
+		if( self->nbr >= AVG_N )
+		{
+			self->sum = 0;
+
+			for( int i = 1; i <= AVG_N; i++ )
+			{
+				self->sum += self->intervals[ i ];
+			}
+
+			self->avg = convertTimeInMilliseconds( self->sum / AVG_N );
+			double ssd = 0.0;
+
+			for( int i = 1; i <= AVG_N; i++ )
+			{
+				
+				double diff = convertTimeInMilliseconds( self->intervals[ i ] ) - self->avg;
+				ssd += diff * diff;
+			}
+
+			self->nbr = 0;
+			self->minTime = sqrt( ssd / AVG_N );
+		}
+		
+        /*
+		self->avg = convertTimeInMilliseconds( sum / nbr );
+        self->prev = time;
         //self->minTime = MIN(self->minTime, interval);
-        if (interval < self->minTime) {
-            self->minTime = interval;
+        if (intervalInSec < self->minTime) {
+            self->minTime = intervalInSec;
         }
-        if (interval > self->maxTime) {
-            self->maxTime = interval;
+        if (intervalInSec > self->maxTime) {
+            self->maxTime = intervalInSec;
         }
+		*/
         //self->maxTime = MAX(self->maxTime, interval);
     }
 }

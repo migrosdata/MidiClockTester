@@ -13,13 +13,16 @@
 //#import "MCTAppDelegate.h"
 @class MCTAppDelegate;
 
+#define AVG_N 200
+
 @interface MidiReceiver : NSObject {
-    double prev;
-    double sum;
+    uint64_t prev;
+    uint64_t sum;
     double avg;
     int nbr;
     double minTime;
     double maxTime;
+	uint64_t intervals[ AVG_N + 1 ];
 }
 @property (assign) MIDIClientRef client;
 @property (assign) MIDIPortRef inPort;
