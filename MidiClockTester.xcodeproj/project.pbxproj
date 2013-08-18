@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B6A114A9179A63D700A22365 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A114A8179A63D700A22365 /* Cocoa.framework */; };
+		B6A114B3179A63D700A22365 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6A114B1179A63D700A22365 /* InfoPlist.strings */; };
+		B6A114B5179A63D700A22365 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A114B4179A63D700A22365 /* main.m */; };
+		B6A114B9179A63D700A22365 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B6A114B7179A63D700A22365 /* Credits.rtf */; };
+		B6A114BC179A63D700A22365 /* MCTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A114BB179A63D700A22365 /* MCTAppDelegate.m */; };
+		B6A114BF179A63D700A22365 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A114BD179A63D700A22365 /* MainMenu.xib */; };
+		B6A114C6179A641900A22365 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A114C5179A641900A22365 /* CoreMIDI.framework */; };
+		B6A114C9179A644F00A22365 /* MidiReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A114C8179A644F00A22365 /* MidiReceiver.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B6A114A5179A63D700A22365 /* MidiClockTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MidiClockTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A114A8179A63D700A22365 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		B6A114AB179A63D700A22365 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		B6A114AC179A63D700A22365 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B6A114AD179A63D700A22365 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B6A114B0179A63D700A22365 /* MidiClockTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MidiClockTester-Info.plist"; sourceTree = "<group>"; };
+		B6A114B2179A63D700A22365 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6A114B4179A63D700A22365 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B6A114B6179A63D700A22365 /* MidiClockTester-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MidiClockTester-Prefix.pch"; sourceTree = "<group>"; };
+		B6A114B8179A63D700A22365 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		B6A114BA179A63D700A22365 /* MCTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTAppDelegate.h; sourceTree = "<group>"; };
+		B6A114BB179A63D700A22365 /* MCTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTAppDelegate.m; sourceTree = "<group>"; };
+		B6A114BE179A63D700A22365 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B6A114C5179A641900A22365 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		B6A114C7179A644F00A22365 /* MidiReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiReceiver.h; sourceTree = "<group>"; };
+		B6A114C8179A644F00A22365 /* MidiReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiReceiver.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6A114A2179A63D700A22365 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6A114C6179A641900A22365 /* CoreMIDI.framework in Frameworks */,
+				B6A114A9179A63D700A22365 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B6A1149C179A63D700A22365 = {
+			isa = PBXGroup;
+			children = (
+				B6A114C5179A641900A22365 /* CoreMIDI.framework */,
+				B6A114AE179A63D700A22365 /* MidiClockTester */,
+				B6A114A7179A63D700A22365 /* Frameworks */,
+				B6A114A6179A63D700A22365 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6A114A6179A63D700A22365 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6A114A5179A63D700A22365 /* MidiClockTester.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6A114A7179A63D700A22365 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6A114A8179A63D700A22365 /* Cocoa.framework */,
+				B6A114AA179A63D700A22365 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6A114AA179A63D700A22365 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6A114AB179A63D700A22365 /* AppKit.framework */,
+				B6A114AC179A63D700A22365 /* CoreData.framework */,
+				B6A114AD179A63D700A22365 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		B6A114AE179A63D700A22365 /* MidiClockTester */ = {
+			isa = PBXGroup;
+			children = (
+				B6A114BA179A63D700A22365 /* MCTAppDelegate.h */,
+				B6A114BB179A63D700A22365 /* MCTAppDelegate.m */,
+				B6A114BD179A63D700A22365 /* MainMenu.xib */,
+				B6A114C7179A644F00A22365 /* MidiReceiver.h */,
+				B6A114C8179A644F00A22365 /* MidiReceiver.m */,
+				B6A114AF179A63D700A22365 /* Supporting Files */,
+			);
+			path = MidiClockTester;
+			sourceTree = "<group>";
+		};
+		B6A114AF179A63D700A22365 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6A114B0179A63D700A22365 /* MidiClockTester-Info.plist */,
+				B6A114B1179A63D700A22365 /* InfoPlist.strings */,
+				B6A114B4179A63D700A22365 /* main.m */,
+				B6A114B6179A63D700A22365 /* MidiClockTester-Prefix.pch */,
+				B6A114B7179A63D700A22365 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6A114A4179A63D700A22365 /* MidiClockTester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6A114C2179A63D700A22365 /* Build configuration list for PBXNativeTarget "MidiClockTester" */;
+			buildPhases = (
+				B6A114A1179A63D700A22365 /* Sources */,
+				B6A114A2179A63D700A22365 /* Frameworks */,
+				B6A114A3179A63D700A22365 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MidiClockTester;
+			productName = MidiClockTester;
+			productReference = B6A114A5179A63D700A22365 /* MidiClockTester.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6A1149D179A63D700A22365 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MCT;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = oub;
+			};
+			buildConfigurationList = B6A114A0179A63D700A22365 /* Build configuration list for PBXProject "MidiClockTester" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B6A1149C179A63D700A22365;
+			productRefGroup = B6A114A6179A63D700A22365 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6A114A4179A63D700A22365 /* MidiClockTester */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6A114A3179A63D700A22365 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6A114B3179A63D700A22365 /* InfoPlist.strings in Resources */,
+				B6A114B9179A63D700A22365 /* Credits.rtf in Resources */,
+				B6A114BF179A63D700A22365 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6A114A1179A63D700A22365 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6A114B5179A63D700A22365 /* main.m in Sources */,
+				B6A114BC179A63D700A22365 /* MCTAppDelegate.m in Sources */,
+				B6A114C9179A644F00A22365 /* MidiReceiver.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B6A114B1179A63D700A22365 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6A114B2179A63D700A22365 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B6A114B7179A63D700A22365 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6A114B8179A63D700A22365 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		B6A114BD179A63D700A22365 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6A114BE179A63D700A22365 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6A114C0179A63D700A22365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B6A114C1179A63D700A22365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B6A114C3179A63D700A22365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MidiClockTester/MidiClockTester-Prefix.pch";
+				INFOPLIST_FILE = "MidiClockTester/MidiClockTester-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B6A114C4179A63D700A22365 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MidiClockTester/MidiClockTester-Prefix.pch";
+				INFOPLIST_FILE = "MidiClockTester/MidiClockTester-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6A114A0179A63D700A22365 /* Build configuration list for PBXProject "MidiClockTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6A114C0179A63D700A22365 /* Debug */,
+				B6A114C1179A63D700A22365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6A114C2179A63D700A22365 /* Build configuration list for PBXNativeTarget "MidiClockTester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6A114C3179A63D700A22365 /* Debug */,
+				B6A114C4179A63D700A22365 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6A1149D179A63D700A22365 /* Project object */;
+}
